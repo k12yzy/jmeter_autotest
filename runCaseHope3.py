@@ -23,7 +23,8 @@ if __name__ == '__main__':
     '''
 
     # 更新模块名与用例脚本名称
-    cases_api = {'gic-webapp-api': ['gic-webapp-api/open_api_hope.jmx', 'Hope开放平台', '8005']}
+    cases_api = {'gic-webapp-api': ['gic-webapp-api/open_api_hope.jmx','Dev开放平台','8005','雅讯'],
+                 'gic-integral-mall': ['gic-integral-mall/integral-mall-hope.jmx','积分商城','8007','良超']}
 
     # jmeter报告地址
     jmeter_path = '/opt/apitest/DmTest/lib/test_result/jmeter/'
@@ -53,7 +54,7 @@ if __name__ == '__main__':
                         dingding_conect = report_get_data( read_file, cases_api[target_module][0], target_module )
                         # 发送钉钉消息
                         result_to_dingding( cases_api[target_module][1], cases_api[target_module][0], file_new,
-                                            dingding_conect, cases_api[target_module][2] )
+                                            dingding_conect, cases_api[target_module][2], cases_api[target_module][3])
                     if key == 'failure':
                         # 发送邮件
                         Mail().send( read_file, cases_api[target_module][1] )
@@ -70,57 +71,3 @@ if __name__ == '__main__':
         logger.info( '您更新的模块名为空，无法启动接口自动化测试！' )
 
 
-    # # 运行的相对路径
-    # path = '.'
-    # # 用例路径
-    # srcfile = ''
-    # savefile = ''
-    # # 获取test_case目录下面的用例文件名
-    # try:
-    #     srcfile = sys.argv[1]
-    # except:
-    #     srcfile = ''
-    #
-    #
-    # # 为空，则使用默认的
-    # if srcfile == '':
-    #     # 文件路径
-    #     srcfile = path + '/lib/test_case/Apitest.xls'
-    #     # 文件保存路径
-    #     savefile = path + '/lib/test_result/%s-%s.xls' % (srcfile[srcfile.rfind('/'):-4], datetime)
-    #
-    # else:
-    #     # 如果是绝对路径，就使用绝对路径
-    #     if srcfile.find( ':' ) >= 0:
-    #         # windows下获取用例文件名
-    #         savefile = path + '/lib/test_result/%s-%s.xls' % (srcfile[srcfile.rfind( '\\' )+1:-4], datetime)
-    #     elif srcfile.find( ':' ) < 0:
-    #         #linux下运行shell脚本使用
-    #         savefile = path + '/lib/test_result/%s-%s.xls' % (srcfile[srcfile.rfind( '/' ):-4], datetime)
-    #     else:
-    #         logger.error( '非法用例路径' )
-    #
-    # # 读取所有execl内容用例，组合二维列表
-    # datadriver.getparams( srcfile, savefile )
-    # print( datadriver.alllist )
-    #
-    # # 执行htttest.py文件的内容，输出HTML报告
-    # suite = unittest.defaultTestLoader.discover( path + "/uittest/", pattern="test_unittest.py", top_level_dir=None )
-    # # 生成执行用例的对象
-    # runner = bf( suite )
-    # htmlpath = path + '/lib/test_result/%s.html' % (savefile[savefile.rfind( '/' ):-4])
-    # runner.report( filename=htmlpath, description=datadriver.casetitle)
-    # datadriver.writer.savefile()
-    # # 本地拷贝文件发服务器发布目录，用于调试
-    # try:
-    #     if platform.platform().__contains__( 'Windows' ):
-    #         # 将本地结果拷贝到服务器备份目录与发布目录
-    #         datadriver.ssh_linux_file(htmlpath,'/home/apitest/MyTestApi/lib/test_result/%s.html'% (savefile[savefile.rfind( '/' ):-4]))
-    #         datadriver.ssh_linux_file(htmlpath,'/home/wwwroot/default/index.html')
-    #         # 自动打开服务器测试结果
-    #         webbrowser.open_new( 'http://www.k12yzy.cn/' )
-    #     else:
-    #         # linux执行时将结果文件拷贝到发布目录;os.path.abspath返回当前目录的绝对路径
-    #         os.system(f'cp {os.path.abspath( htmlpath )} /home/wwwroot/default/index.html')
-    # except Exception as e:
-    #     pass

@@ -63,7 +63,7 @@ def result_to_dingding(case_name, case_path, file_name, dingding_conect, port, t
     # except Exception as e:
     #     logger.info(e)
     # send_info = send_info.replace( '问题链接', taplink )
-    message_data = xiaoding.send_markdown(title='接口自动化执行结果...', text=send_info  ,at_mobiles=[13989812663])
+    message_data = xiaoding.send_markdown(title=f'{case_name}接口测试结果..', text=send_info  ,at_mobiles=[{test_mobile[test_name]}])
     logger.info( f'钉钉发送：--> {message_data}' )
 
 # if '__name__' == '__main__':
