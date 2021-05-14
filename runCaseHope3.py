@@ -23,7 +23,7 @@ if __name__ == '__main__':
     '''
 
     # 更新模块名与用例脚本名称
-    cases_api = {'gic-webapp-api': ['gic-webapp-api/open_api_hope.jmx','Dev开放平台','8005','雅讯'],
+    cases_api = {'gic-webapp-api': ['gic-webapp-api/open_api_hope.jmx','Dev开放平台','8005','浮光'],
                  'gic-integral-mall': ['gic-integral-mall/integral-mall-hope.jmx','积分商城','8007','良超']}
 
     # jmeter报告地址
