@@ -24,7 +24,6 @@ if __name__ == '__main__':
         ssh root@10.105.220.75 "cd /opt/apitest/DmTest/jmeter && python3 runCaseDev3.py gic-webapp-api"
     业务模块：
         'gic-wx-app': '['gic-wx-app/wx-app-dev.jmx','小程序','8008','良超']',
-        'gic-member': '['gic-member/member-dev.jmx','会员','8009','白月初']',
         'gic-marketing': '['gic-marketing/marketing-dev.jmx','营销','8010','无双']',
         'gic-operations': '['gic-operations/operations-dev.jmx','运维后台','8011','白月初']',
         'gic-clerk': '['gic-clerk/clerk-dev.jmx','导购','8012','夜澜']',
@@ -41,7 +40,8 @@ if __name__ == '__main__':
 
     # 更新模块名与用例脚本名称
     cases_api = {'gic-webapp-api': ['gic-webapp-api/open_api_dev.jmx','Dev开放平台','8005','浮光'],
-                 'gic-integral-mall': ['gic-integral-mall/integral-mall-dev.jmx','积分商城','8007','良超']}
+                 'gic-integral-mall': ['gic-integral-mall/integral-mall-dev.jmx','Dev积分商城','8007','良超'],
+                 'gic-member': ['gic-member/member-dev.jmx','Dev会员','8009','白月初']}
 
     # jmeter报告地址
     jmeter_path = '/opt/apitest/DmTest/lib/test_result/jmeter/'

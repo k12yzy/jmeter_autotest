@@ -23,8 +23,9 @@ if __name__ == '__main__':
     '''
 
     # 更新模块名与用例脚本名称
-    cases_api = {'gic-webapp-api': ['gic-webapp-api/open_api_hope.jmx','Dev开放平台','8005','浮光'],
-                 'gic-integral-mall': ['gic-integral-mall/integral-mall-hope.jmx','积分商城','8007','良超']}
+    cases_api = {'gic-webapp-api': ['gic-webapp-api/open_api_hope.jmx','Hope开放平台','8005','浮光'],
+                 'gic-integral-mall': ['gic-integral-mall/integral-mall-hope.jmx','Hope积分商城','8007','良超'],
+                 'gic-member': ['gic-member/member-hope.jmx','Hope会员','8009','白月初']}
 
     # jmeter报告地址
     jmeter_path = '/opt/apitest/DmTest/lib/test_result/jmeter/'
@@ -64,7 +65,7 @@ if __name__ == '__main__':
                 run_fileupload( target_module, host, cases_api[target_module][2] )
                 logger.info( '=' * 30 + '【接口测试完成】' + '=' * 30 )
             else:
-                logger.info( f'开发环境： {rcfile}' )
+                logger.info( f'生产环境： 大概需要2分钟左右，请奈心等待-->{rcfile}' )
                 pass
 
     except Exception as e:
