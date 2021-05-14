@@ -38,7 +38,7 @@ if __name__ == '__main__':
         # 第二步 如果模块名与脚本中的名称一样，运行相应模块的测试
         for target_module in cases_api:
             if rcfile == target_module:
-                logger.info( '=' * 30 + f'【生产环境-开始执行接口测试-->模块名：{rcfile}】' + '=' * 30 )
+                logger.info( '=' * 20 + f'【生产环境-正在执行接口测试，大概需要2分钟左右-->模块名：{rcfile}】' + '=' * 20 )
                 # 第三步 调相应的脚本运行
                 # linux执行时将结果文件拷贝到发布目录;os.path.abspath返回当前目录的绝对路径
                 os.system(
@@ -63,12 +63,9 @@ if __name__ == '__main__':
 
                 # 多线程，启用web服务器，上传脚本
                 run_fileupload( target_module, host, cases_api[target_module][2] )
-                logger.info( '=' * 30 + '【接口测试完成】' + '=' * 30 )
-            else:
-                logger.info( f'生产环境： 大概需要2分钟左右，请奈心等待-->{rcfile}' )
-                pass
+                logger.info( '=' * 20 + '【接口测试完成】' + '=' * 20 )
 
     except Exception as e:
-        logger.info( '您更新的模块名为空，无法启动接口自动化测试！' )
+        logger.info( '您更新的模块名不存在，无法启动接口自动化测试！' )
 
 
