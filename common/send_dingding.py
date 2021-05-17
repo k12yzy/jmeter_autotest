@@ -2,9 +2,12 @@
 # -*- coding: utf-8 -*-
 # @Time :  2021/12/6 21:39
 # @File :  send_dingding.py
+import os
 from time import strftime
 from dingtalkchatbot.chatbot import DingtalkChatbot
 from common import logger
+from common import config
+config.get_config( path=os.path.dirname( os.path.dirname( __file__ ) ) + '/lib/conf.txt' )
 
 
 def result_to_dingding(case_name, case_path, file_name, dingding_conect, port, test_name):
@@ -19,20 +22,13 @@ def result_to_dingding(case_name, case_path, file_name, dingding_conect, port, t
     :return:
     '''
     #判断是为空
-    now = strftime( "%Y-%m-%d %H:%M:%S" )  # 获取测试时间
+    nowtime = strftime( "%Y-%m-%d %H:%M:%S" )  # 获取测试时间
     if file_name is None or file_name == '':
         pass
         logger.info( file_name )
 
-    # WebHook——>TAPD测试提醒
-    # webhook = 'https://oapi.dingtalk.com/robot/send?access_token=707e529dfe123770549f0b0007cfed259c1b1090e07fdc2d47e17aefdbe00f7b'
-    # TAPD问题处理提醒——>内部调试测试群
-    # webhook=https://oapi.dingtalk.com/robot/send?access_token=96b7353c953e92218c0af0daf504c98e4ede265aea0078dafd910be6eaf4bf84
-    # webhook——>个人测试群
-    webhook = 'https://oapi.dingtalk.com/robot/send?access_token=0e8790a03d47c22641bbb3fb3d85e47a30aeb8bc5bb6fa21c0ed21e3d6c82783'
-
     # 初始化机器人小丁
-    xiaoding = DingtalkChatbot(webhook)
+    xiaoding = DingtalkChatbot(config.config['webhook'])
     jmeter_path = 'https://four.gicdev.com/DmTest/jmeter/'
     test_mobile = {'雅讯': '13989812663', '良超': '13803544685', '夜澜': '15869132266', '无双': '15732638539',
                    '白月初': '18268191752', '时荒': '18272872382', '浮光': '18758228432','君笑': '13097284062'}
@@ -51,7 +47,7 @@ def result_to_dingding(case_name, case_path, file_name, dingding_conect, port, t
                 f"<font color=\'#708090\' size=2>成 功 率：</font><font color=\'#708090\' size=3>{dingding_conect['成功率']}</font> \n\n " \
                 f"<font color=\'#708090\' size=2>平均响应时间：</font><font color=\'#708090\' size=3>{dingding_conect['平均响应时间']}</font> \n\n " \
                 f"<font color=\'#708090\' size=2>测试人员：</font><font color=\'#708090\' size=2>{test_name}</font> \n\n " \
-                f"</font><font color=\'#708090\' size=2>测试时间：</font><font color=\'#708090\' size=2>{now}</font> \n\n " \
+                f"</font><font color=\'#708090\' size=2>测试时间：</font><font color=\'#708090\' size=2>{nowtime}</font> \n\n " \
                 f"--- \n\n  @{test_mobile[test_name]} <font color=\'#888888\' size=2>[查看详细报告]({detail_url}) </font>"
     #逻辑有错误的列表，将error字段拼接msg
     taplink = ''

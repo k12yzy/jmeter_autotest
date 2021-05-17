@@ -78,6 +78,7 @@ if __name__ == '__main__':
                 # 多线程，启用web服务器，上传脚本
                 run_fileupload( target_module, host, cases_api[target_module][2] )
                 logger.info( '=' * 20 + '【接口测试完成】' + '=' * 20 )
+        logger.info(f'开发环境： {rcfile}' )
 
     except Exception as e:
         logger.info( '您更新的模块名不存在，无法启动接口自动化测试！' )
