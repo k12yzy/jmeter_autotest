@@ -29,9 +29,10 @@ def result_to_dingding(case_name, case_path, file_name, dingding_conect, port, t
 
     # 初始化机器人小丁
     xiaoding = DingtalkChatbot(config.config['webhook'])
+    # jmeter报告发布目录
     jmeter_path = 'https://four.gicdev.com/DmTest/jmeter/'
-    test_mobile = {'雅讯': '13989812663', '良超': '13803544685', '夜澜': '15869132266', '无双': '15732638539',
-                   '白月初': '18268191752', '时荒': '18272872382', '浮光': '18758228432','君笑': '13097284062'}
+    # 获取测试人员手机号
+    test_mobile = eval(config.config['test_mobile'])
 
     # 图片加文本样式（3）
     request_url = f'{jmeter_path}html/request/{file_name}'
