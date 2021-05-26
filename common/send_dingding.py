@@ -7,7 +7,7 @@ from time import strftime
 from dingtalkchatbot.chatbot import DingtalkChatbot
 from common import logger
 from common import config
-config.get_config( path=os.path.dirname( os.path.dirname( __file__ ) ) + '/lib/conf.txt' )
+config.get_config( path=os.path.dirname( os.path.dirname( __file__ ) ) + '/conf/conf.txt' )
 
 
 def result_to_dingding(case_name, case_path, file_name, dingding_conect, port, test_name):

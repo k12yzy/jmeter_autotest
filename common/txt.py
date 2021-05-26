@@ -96,7 +96,7 @@ class Txt:
 
 # if __name__ = '__main__':
 if __name__ == '__main__':
-    txt = Txt('../lib/conf.txt')
+    txt = Txt( '../conf/conf.txt' )
     txt.read()
     print(txt.data)
 
