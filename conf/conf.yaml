@@ -1,0 +1,36 @@
+dev_cases_api:
+  gic-webapp-api:
+    - 'gic-webapp-api/open_api_dev.jmx'
+    - 'Dev开放平台'
+    - '8005'
+    - '浮光'
+  gic-integral-mall:
+    - 'gic-integral-mall/integral-mall-dev.jmx'
+    - 'Dev积分商城'
+    - '8007'
+    - '良超'
+  gic-member:
+    - 'gic-member/member-dev.jmx'
+    - 'Dev会员'
+    - '8009'
+    - '白月初'
+
+
+hope_cases_api:
+  gic-webapp-api:
+    - 'gic-webapp-api/open_api_hope.jmx'
+    - 'Hope开放平台'
+    - '8005'
+    - '浮光'
+  gic-integral-mall:
+    - 'gic-integral-mall/integral-mall-hope.jmx'
+    - 'Hope积分商城'
+    - '8007'
+    - '良超'
+  gic-member:
+    - 'gic-member/member-hope.jmx'
+    - 'Hope会员'
+    - '8009'
+    - '白月初'
+
+
