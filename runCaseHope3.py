@@ -4,16 +4,20 @@
 # @File :  runCaseHope3.py
 import re
 import sys
-import time, os
+import time, os, yaml
 from common import logger
 from common.get_data import *
 from common.send_mail import Mail
 from common.send_dingding import result_to_dingding
 
-# datetime = time.strftime( "%Y%m%d-%H_%M_%S", time.localtime() )
 
 host = '10.105.220.75'
 # host = '212.64.23.196'
+
+# 读取配置文件
+with open(file="./conf/apicase.yaml", mode='r', encoding="utf-8") as file:
+    aipcase_yaml = yaml.load(stream=file, Loader=yaml.FullLoader)
+    # print(aipcase_yaml)
 
 if __name__ == '__main__':
     '''
@@ -23,10 +27,7 @@ if __name__ == '__main__':
     '''
 
     # 更新模块名与用例脚本名称
-    cases_api = {'gic-webapp-api': ['gic-webapp-api/open_api_hope.jmx','Hope开放平台','8005','浮光'],
-                 'gic-integral-mall': ['gic-integral-mall/integral-mall-hope.jmx','Hope积分商城','8007','良超'],
-                 'gic-member': ['gic-member/member-hope.jmx','Hope会员','8009','白月初']}
-
+    cases_api = aipcase_yaml['hope_cases_api']
     # jmeter报告地址
     jmeter_path = '/opt/apitest/DmTest/lib/test_result/jmeter/'
     # 测试报告目录地址

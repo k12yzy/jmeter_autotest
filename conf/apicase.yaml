@@ -1,0 +1,64 @@
+dev_cases_api:
+  gic-webapp-api:
+    - 'gic-webapp-api/open_api_dev.jmx'
+    - 'Dev开放平台'
+    - '8005'
+    - '浮光'
+  gic-integral-mall:
+    - 'gic-integral-mall/integral-mall-dev.jmx'
+    - 'Dev积分商城'
+    - '8007'
+    - '良超'
+  gic-member:
+    - 'gic-member/member-dev.jmx'
+    - 'Dev会员'
+    - '8009'
+    - '白月初'
+  gic-member-tag-web:
+    - 'gic-member-tag-web/member-tag-web-dev.jmx'
+    - 'Dev会员标签'
+    - '8010'
+    - '白月初'
+
+
+hope_cases_api:
+  gic-webapp-api:
+    - 'gic-webapp-api/open_api_hope.jmx'
+    - 'Hope开放平台'
+    - '8005'
+    - '浮光'
+  gic-integral-mall:
+    - 'gic-integral-mall/integral-mall-hope.jmx'
+    - 'Hope积分商城'
+    - '8007'
+    - '良超'
+  gic-member:
+    - 'gic-member/member-hope.jmx'
+    - 'Hope会员'
+    - '8009'
+    - '白月初'
+  gic-member-tag-web:
+    - 'gic-member-tag-web/member-tag-web-dev.jmx'
+    - 'Hope会员标签'
+    - '8010'
+    - '白月初'
+
+
+
+
+
+#    业务模块：
+#        'gic-wx-app': '['gic-wx-app/wx-app-dev.jmx','小程序','8008','良超']',
+#        'gic-marketing': '['gic-marketing/marketing-dev.jmx','营销','8010','无双']',
+#        'gic-operations': '['gic-operations/operations-dev.jmx','运维后台','8011','白月初']',
+#        'gic-clerk': '['gic-clerk/clerk-dev.jmx','导购','8012','夜澜']',
+#        'gic-ecm': '['gic-ecm/ecm-dev.jmx','ECM','8013','无双']',
+#        'gic-mall': '['gic-mall/mall-dev.jmx','微商城','8014','良超']',
+#        'gic-webapp-marketing': '['gic-webapp-marketing/webapp-marketing-dev.jmx','XXX','8015','雅讯']',
+#        'gic-webapp-member': '['gic-webapp-member/webapp-member-dev.jmx','XXX','8016','雅讯']',
+#        'gic-webapp-admin': '['gic-webapp-admin/webapp-admin-dev.jmx','XXX','8017','雅讯']',
+#        'gic-store-goods': '['gic-store-goods/store-goods-dev.jmx','门店商品','8018','良超']',
+#        'gic-task': '['gic-task/task_dev.jmx','工作台','8019','雅讯']',
+#        'gic-thirdparty': '['gic-thirdparty/thirdparty-dev.jmx','XXX','8020','雅讯']'
+#        'gic-goods': '['gic-goods/goods-dev.jmx','商品','8021','良超']'
+#    '''

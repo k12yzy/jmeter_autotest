@@ -13,19 +13,20 @@ print(path)
 
 
 # 读取配置文件
-with open(file="./conf/conf.yaml", mode='r', encoding="utf-8") as file:
+with open(file="./conf/apicase.yaml", mode='r', encoding="utf-8") as file:
     logging_yaml = yaml.load(stream=file, Loader=yaml.FullLoader)
     print(logging_yaml)
 
-ad = ['请求数量', '失败', '成功率', '平均响应时间', '39', '1', '97.44%', '758 ms']
 
-file = 'test_abc.html'
+# ad = ['请求数量', '失败', '成功率', '平均响应时间', '39', '1', '97.44%', '758 ms']
+#
+# file = 'test_abc.html'
 # with open( 'test_abc.html', 'r+', encoding='utf-8' ) as f:
 #     a = f.read().replace('OpenApiTest_2021_0404_215535','aadfs.html')
 #     f.write(a)
 
 
-rcfile = sys.argv
+# rcfile = sys.argv
 # print(rcfile)
 
 # newfile = open(file,'w',encoding='utf-8')

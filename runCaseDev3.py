@@ -6,15 +6,20 @@ import re
 import sys
 import threading
 import time, os
+import yaml
 from common import logger
 from common.get_data import *
 from common.send_mail import Mail
 from common.send_dingding import result_to_dingding
-
-# datetime = time.strftime( "%Y%m%d-%H_%M_%S", time.localtime() )
+path = os.path.dirname(os.path.dirname(__file__))
 
 host = '10.105.220.75'
 # host = '212.64.23.196'
+
+# 读取配置文件
+with open(file="./conf/apicase.yaml", mode='r', encoding="utf-8") as file:
+    aipcase_yaml = yaml.load(stream=file, Loader=yaml.FullLoader)
+    # print(aipcase_yaml)
 
 if __name__ == '__main__':
     '''
@@ -39,10 +44,7 @@ if __name__ == '__main__':
     '''
 
     # 更新模块名与用例脚本名称
-    cases_api = {'gic-webapp-api': ['gic-webapp-api/open_api_dev.jmx','Dev开放平台','8005','浮光'],
-                 'gic-integral-mall': ['gic-integral-mall/integral-mall-dev.jmx','Dev积分商城','8007','良超'],
-                 'gic-member': ['gic-member/member-dev.jmx','Dev会员','8009','白月初']}
-
+    cases_api = aipcase_yaml['dev_cases_api']
     # jmeter报告地址
     jmeter_path = '/opt/apitest/DmTest/lib/test_result/jmeter/'
     # 测试报告目录地址
