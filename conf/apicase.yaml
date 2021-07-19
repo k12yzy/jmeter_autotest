@@ -38,7 +38,7 @@ hope_cases_api:
     - '8009'
     - '白月初'
   gic-member-tag-web:
-    - 'gic-member-tag-web/member-tag-web-dev.jmx'
+    - 'gic-member-tag-web/member-tag-web-hope.jmx'
     - 'Hope会员标签'
     - '8010'
     - '白月初'
